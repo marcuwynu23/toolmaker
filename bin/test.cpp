@@ -1,22 +1,18 @@
+#include <iostream>
 #include <windows.h>
 
 //function pointers
 typedef void (*pHelloFunc)(); 
 typedef void (*pPrintNumFunc)(int number); 
-
+typedef void (*pTermExFunc)(std::string command);
 
 int main(int argc, char const *argv[])
 {	
 	//loading DLL
-	HMODULE  dll  = LoadLibrary("bin/lib.dll");    
+	HMODULE  dll  = LoadLibrary("bin/toolmaker.dll");    
 
-	//clone function from DLL
-	pHelloFunc  		hello = (pHelloFunc) GetProcAddress(dll, "hello"); 
-	pPrintNumFunc  	printNumber = (pPrintNumFunc) GetProcAddress(dll, "printNumber");
+	pTermExFunc termExecute = (pTermExFunc) GetProcAddress(dll,"termExecute");
 
-	// calling function 
-	hello();
-	printNumber(23);
-	
+	termExecute("echo Hello");
 	return 0;
 }
