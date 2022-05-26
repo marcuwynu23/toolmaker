@@ -12,7 +12,16 @@ int main(int argc, char const *argv[])
 	HMODULE  dll  = LoadLibrary("bin/toolmaker.dll");    
 
 	pTermExFunc termExecute = (pTermExFunc) GetProcAddress(dll,"termExecute");
+	
+	
+	termExecute("echo Hello World!");
 
-	termExecute("echo Hello");
+
+
+FreeLibrary(dll);
+	
+	
+	
+
 	return 0;
 }

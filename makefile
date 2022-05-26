@@ -6,6 +6,6 @@ all:
 
 #test DLL
 test:
-	c++ --std=c++11  bin/test.cpp -o bin/test.exe
+	c++   bin/test.cpp -o bin/test.exe
 	bin/test.exe
 
