@@ -13,7 +13,7 @@ HMODULE  dll  = LoadLibrary("bin/toolmaker.dll")
 typedef void (*pTermExFunc)(std::string command);
 
 
-//create cloned function using pointer function and GetProcAddress function
+//create clone function using pointer function and GetProcAddress function
 pTermExFunc termExecute = (pTermExFunc) GetProcAddress(dll,"termExecute");
 
 
