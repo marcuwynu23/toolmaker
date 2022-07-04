@@ -15,13 +15,7 @@ int main(int argc, char const *argv[])
 	
 	
 	termExecute("echo Hello World!");
-
-
-
-FreeLibrary(dll);
-	
-	
-	
+	FreeLibrary(dll);
 
 	return 0;
 }
